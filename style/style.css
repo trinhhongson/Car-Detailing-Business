@@ -13,7 +13,7 @@ html {
 body {
     background-color: #111;
     color: #fff;
-    /* Fixed background image - swap with your own badass car pics */
+    /* NEW BACKGROUND IMAGE */
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1655628266959-12ec3f839a46?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
@@ -69,7 +69,6 @@ section.visible {
 
 /* Glassmorphism card effect for content */
 .content-box {
-    /* Dropped alpha from 0.6 to 0.35 to make it more transparent */
     background: rgba(20, 20, 20, 0.35); 
     backdrop-filter: blur(15px);
     padding: 50px;
@@ -110,7 +109,7 @@ section.visible {
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-align: center; /* Centers text for mobile full-width buttons */
+    text-align: center;
 }
 
 .btn:hover {
@@ -190,14 +189,13 @@ input, select, textarea {
     border-radius: 5px;
     font-size: 1rem;
     outline: none;
-    width: 100%; /* Ensures inputs don't push past container boundaries */
+    width: 100%;
 }
 
 input:focus, select:focus, textarea:focus {
     border-color: #007BFF;
 }
 
-/* Fix the native date picker icon to be white in dark mode so it isn't invisible */
 ::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
@@ -220,65 +218,116 @@ button[type="submit"]:hover {
     background: #0056b3;
 }
 
-/* --- CONTACT --- */
-#contact .content-box {
-    max-width: 600px;
+/* --- NEW: OUR WORKS GALLERY --- */
+#works .works-box {
+    max-width: 1000px;
 }
 
-#contact h2 {
-    margin-bottom: 30px;
+.gallery-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
-#contact p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    word-break: break-word; /* Stops long emails from breaking the mobile layout */
+.compare-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
+
+.compare-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.compare-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* Let clicks pass through to the slider */
+}
+
+.img-before {
+    /* Initially show 50% of the top image */
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.compare-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Invisible but functional */
+    cursor: ew-resize;
+    z-index: 10;
+}
+
+.slider-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #007BFF;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: #007BFF;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    pointer-events: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.gallery-label {
+    font-size: 1.1rem;
+    color: #ccc;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
 
 /* --- MOBILE RESPONSIVENESS ADJUSTMENTS --- */
 @media (max-width: 768px) {
-    /* Compress navbar */
-    nav { 
-        padding: 15px 10px; 
-        gap: 15px; 
-        flex-wrap: wrap;
-    }
-    nav a {
-        font-size: 0.85rem;
-    }
-
-    /* Reduce giant padding on boxes so it fits the screen */
-    .content-box { 
-        padding: 30px 20px; 
-    }
-
-    /* Shrink huge text */
-    #home h1 { 
-        font-size: 2.2rem; 
-    }
-    h2 {
-        font-size: 2rem !important;
-    }
-
-    /* Stack the form properly */
-    form { 
-        grid-template-columns: 1fr; 
-    }
-    .form-group.full-width, button[type="submit"] { 
-        grid-column: span 1; 
-    }
+    nav { padding: 15px 10px; gap: 15px; flex-wrap: wrap; }
+    nav a { font-size: 0.85rem; }
+    .content-box { padding: 30px 20px; }
+    #home h1 { font-size: 2.2rem; }
+    h2 { font-size: 2rem !important; }
     
-    /* Stack the services */
-    .service-category {
-        min-width: 100%;
-    }
+    form { grid-template-columns: 1fr; }
+    .form-group.full-width, button[type="submit"] { grid-column: span 1; }
+    
+    .service-category { min-width: 100%; }
+    
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 100%; }
 
-    /* Stack buttons to make them fat and tappable */
-    .hero-buttons { 
-        flex-direction: column; 
-        width: 100%;
-    }
-    .hero-buttons .btn {
-        width: 100%;
-    }
+    /* Stack the before/after canvases on phones */
+    .gallery-grid { flex-direction: column; }
+    .compare-wrapper { width: 100%; }
 }
