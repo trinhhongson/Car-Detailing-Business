@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Mobile Detailing</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book Appointment</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <section id="home">
+        <div class="content-box">
+            <h1>ANDY DETAILING</h1>
+            <p>📍 Mobile Service - We come to you!</p>
+            <p>📞 240-660-7455</p>
+            <p>✉️ contact@andydetailing.com</p>
+            <p>📸 Instagram: @AndyDetailing</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn">- Services -</a>
+                <a href="#booking" class="btn">- Book Appointment -</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="content-box">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Our Services</h2>
+            <div class="services-grid">
+                
+                <div class="service-category">
+                    <h3>Exterior Detailing</h3>
+                    <div class="service-item">
+                        <h4>Premium Hand Wash</h4>
+                        <p><span>Cars</span> <span>$50</span></p>
+                        <p><span>SUV / Minivan</span> <span>$65</span></p>
+                        <p><span>Trucks</span> <span>$80</span></p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Wash & Wax</h4>
+                        <p><span>Cars</span> <span>$100</span></p>
+                        <p><span>SUV / Minivan</span> <span>$120</span></p>
+                        <p><span>Trucks</span> <span>$140</span></p>
+                    </div>
+                </div>
+
+                <div class="service-category">
+                    <h3>Interior Detailing</h3>
+                    <div class="service-item">
+                        <h4>Basic Interior Clean</h4>
+                        <p><span>Cars</span> <span>$60</span></p>
+                        <p><span>SUV / Minivan</span> <span>$75</span></p>
+                        <p><span>Trucks</span> <span>$90</span></p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Deep Extraction & Steam</h4>
+                        <p><span>Cars</span> <span>$150</span></p>
+                        <p><span>SUV / Minivan</span> <span>$175</span></p>
+                        <p><span>Trucks</span> <span>$200</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <div class="content-box">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Book Appointment</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" name="date" required onclick="this.showPicker()">
+                </div>
+
+                <div class="form-group">
+                    <label>Vehicle Type</label>
+                    <select name="vehicle_type" required>
+                        <option value="" disabled selected>Select Type...</option>
+                        <option value="Car">Car</option>
+                        <option value="SUV/Minivan">SUV / Minivan</option>
+                        <option value="Truck">Truck</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Make</label>
+                    <input type="text" name="make" placeholder="e.g., Ford" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" name="model" placeholder="e.g., Mustang" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Notes</label>
+                    <textarea name="notes" rows="3" placeholder="Tell us what you need..."></textarea>
+                </div>
+
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="content-box">
+            <h2>Contact Us</h2>
+            <p>📍 Mobile Service - We come to you!</p>
+            <p>📞 240-660-7455</p>
+            <p>✉️ contact@andydetailing.com</p>
+            <p>📸 Instagram: @AndyDetailing</p>
+        </div>
+    </section>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
