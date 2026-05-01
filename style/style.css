@@ -14,7 +14,7 @@ body {
     background-color: #111;
     color: #fff;
     /* Fixed background image - swap with your own badass car pics */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1655628266959-12ec3f839a46?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2000&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -69,7 +69,8 @@ section.visible {
 
 /* Glassmorphism card effect for content */
 .content-box {
-    background: rgba(20, 20, 20, 0.6);
+    /* Dropped alpha from 0.6 to 0.35 to make it more transparent */
+    background: rgba(20, 20, 20, 0.35); 
     backdrop-filter: blur(15px);
     padding: 50px;
     border-radius: 15px;
@@ -109,6 +110,7 @@ section.visible {
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-align: center; /* Centers text for mobile full-width buttons */
 }
 
 .btn:hover {
@@ -188,6 +190,7 @@ input, select, textarea {
     border-radius: 5px;
     font-size: 1rem;
     outline: none;
+    width: 100%; /* Ensures inputs don't push past container boundaries */
 }
 
 input:focus, select:focus, textarea:focus {
@@ -229,13 +232,53 @@ button[type="submit"]:hover {
 #contact p {
     font-size: 1.2rem;
     margin-bottom: 15px;
+    word-break: break-word; /* Stops long emails from breaking the mobile layout */
 }
 
-/* Mobile Adjustments */
+/* --- MOBILE RESPONSIVENESS ADJUSTMENTS --- */
 @media (max-width: 768px) {
-    nav { padding: 15px; flex-wrap: wrap; gap: 15px; }
-    #home h1 { font-size: 2.5rem; }
-    form { grid-template-columns: 1fr; }
-    .form-group.full-width, button[type="submit"] { grid-column: span 1; }
-    .hero-buttons { flex-direction: column; }
+    /* Compress navbar */
+    nav { 
+        padding: 15px 10px; 
+        gap: 15px; 
+        flex-wrap: wrap;
+    }
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    /* Reduce giant padding on boxes so it fits the screen */
+    .content-box { 
+        padding: 30px 20px; 
+    }
+
+    /* Shrink huge text */
+    #home h1 { 
+        font-size: 2.2rem; 
+    }
+    h2 {
+        font-size: 2rem !important;
+    }
+
+    /* Stack the form properly */
+    form { 
+        grid-template-columns: 1fr; 
+    }
+    .form-group.full-width, button[type="submit"] { 
+        grid-column: span 1; 
+    }
+    
+    /* Stack the services */
+    .service-category {
+        min-width: 100%;
+    }
+
+    /* Stack buttons to make them fat and tappable */
+    .hero-buttons { 
+        flex-direction: column; 
+        width: 100%;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+    }
 }
