@@ -3,70 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Mobile Detailing</title>
+    <title>Shined And Polished Mobile Detailing</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+    <div class="parallax-bg"></div>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#services">Services</a>
-        <a href="#booking">Book Appointment</a>
         <a href="#works">Our Works</a>
+        <a href="#booking">Book Appointment</a>
     </nav>
 
     <section id="home">
         <div class="content-box">
-            <h1>ANDY DETAILING</h1>
-            <p>📍 Mobile Service - We come to you!</p>
-            <p>📞 240-660-7455</p>
-            <p>✉️ contact@andydetailing.com</p>
-            <p>📸 Instagram: @AndyDetailing</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn">- Services -</a>
-                <a href="#booking" class="btn">- Book Appointment -</a>
+            <div class="discount-banner">
+                GET 20% OFF FOR FIRST TIME CLIENTS
             </div>
+
+            <h1>Shined & Polished</h1>
+            
+            <div class="contact-info">
+                <p>Mobile Service</p>
+                <p>240-660-7455 &nbsp;|&nbsp; contact@shinedandpolished.com</p>
+            </div>
+            
+            <p style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 15px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <a href="https://www.instagram.com/s.p.details/" target="_blank" style="color: inherit; text-decoration: none; letter-spacing: 1px;">@s.p.details</a>
+            </p>
+
+            <div class="why-us-container">
+                <h3 class="why-title">Why Choose Us?</h3>
+                <ul class="why-us-list">
+                    <li>
+                        <span class="why-feature">We come to you</span>
+                        <span class="why-separator">|</span>
+                        <span class="why-benefit">Home, office, or anywhere your car is parked.</span>
+                    </li>
+                    <li>
+                        <span class="why-feature">Simple Setup</span>
+                        <span class="why-separator">|</span>
+                        <span class="why-benefit">Just point us to a water source and outlet.</span>
+                    </li>
+                    <li>
+                        <span class="why-feature">Zero Hassle</span>
+                        <span class="why-separator">|</span>
+                        <span class="why-benefit">Relax at home or work while we handle the rest.</span>
+                    </li>
+                    <li>
+                        <span class="why-feature">Premium Products</span>
+                        <span class="why-separator">|</span>
+                        <span class="why-benefit">Guarantees long-lasting protection and a flawless shine.</span>
+                    </li>
+                    <li>
+                        <span class="why-feature">Transparent Pricing</span>
+                        <span class="why-separator">|</span>
+                        <span class="why-benefit">Easy online booking with absolutely no hidden surprises.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <br>
+            <a href="#services" class="scroll-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
         </div>
     </section>
 
     <section id="services">
         <div class="content-box">
-            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Our Services</h2>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Our Services</h2>
+            
             <div class="services-grid">
-                
                 <div class="service-category">
-                    <h3>Exterior Detailing</h3>
+                    <h3>Complete Packages</h3>
                     <div class="service-item">
-                        <h4>Premium Hand Wash</h4>
-                        <p><span>Cars</span> <span>$50</span></p>
-                        <p><span>SUV / Minivan</span> <span>$65</span></p>
-                        <p><span>Trucks</span> <span>$80</span></p>
+                        <div class="service-header">
+                            <h4>Premium Package</h4>
+                            <button class="details-btn" onclick="openModal('premium', 'Premium Package Details')">More Details</button>
+                        </div>
+                        <p><span>Sedan</span> <span>$150+</span></p>
+                        <p><span>SUV / Minivan</span> <span>$175+</span></p>
+                        <p><span>Trucks</span> <span>$200+</span></p>
                     </div>
+                    
                     <div class="service-item">
-                        <h4>Wash & Wax</h4>
-                        <p><span>Cars</span> <span>$100</span></p>
-                        <p><span>SUV / Minivan</span> <span>$120</span></p>
-                        <p><span>Trucks</span> <span>$140</span></p>
+                        <div class="service-header">
+                            <h4>Deluxe Package</h4>
+                            <button class="details-btn" onclick="openModal('deluxe', 'Deluxe Package Details')">More Details</button>
+                        </div>
+                        <p><span>Sedan</span> <span>$250+</span></p>
+                        <p><span>SUV / Minivan</span> <span>$275+</span></p>
+                        <p><span>Trucks</span> <span>$300+</span></p>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <h4>Full Detail Package</h4>
+                            <button class="details-btn" onclick="openModal('full', 'Full Detail Package Details')">More Details</button>
+                        </div>
+                        <p><span>Sedan</span> <span>$350+</span></p>
+                        <p><span>SUV / Minivan</span> <span>$375+</span></p>
+                        <p><span>Trucks</span> <span>$400+</span></p>
                     </div>
                 </div>
 
                 <div class="service-category">
-                    <h3>Interior Detailing</h3>
+                    <h3>Standalone Services</h3>
                     <div class="service-item">
-                        <h4>Basic Interior Clean</h4>
-                        <p><span>Cars</span> <span>$60</span></p>
-                        <p><span>SUV / Minivan</span> <span>$75</span></p>
-                        <p><span>Trucks</span> <span>$90</span></p>
+                        <div class="service-header">
+                            <h4>Interior Detail Only</h4>
+                            <button class="details-btn" onclick="openModal('interior', 'Interior Detail & Add-ons')">More Details</button>
+                        </div>
+                        <p><span>Sedan</span> <span>$115+</span></p>
+                        <p><span>SUV / Minivan</span> <span>$140+</span></p>
+                        <p><span>Trucks</span> <span>$165+</span></p>
                     </div>
+
                     <div class="service-item">
-                        <h4>Deep Extraction & Steam</h4>
-                        <p><span>Cars</span> <span>$150</span></p>
-                        <p><span>SUV / Minivan</span> <span>$175</span></p>
-                        <p><span>Trucks</span> <span>$200</span></p>
+                        <div class="service-header">
+                            <h4>Exterior Wash & Wax</h4>
+                            <button class="details-btn" onclick="openModal('exterior', 'Exterior Detail & Add-ons')">More Details</button>
+                        </div>
+                        <p><span>Sedan</span> <span>$115+</span></p>
+                        <p><span>SUV / Minivan</span> <span>$140+</span></p>
+                        <p><span>Trucks</span> <span>$165+</span></p>
                     </div>
                 </div>
-
             </div>
+
+            <br>
+            <a href="#works" class="scroll-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <section id="works">
+        <div class="content-box works-box">
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Our Works</h2>
+            <div class="gallery-grid">
+                <div class="compare-wrapper">
+                    <div class="compare-container">
+                        <img src="img/mazda-wheel-after.webp" alt="After" class="img-after">
+                        <img src="img/mazda-wheel-before.webp" alt="Before" class="img-before">
+                        <div class="slider-line"></div>
+                        <div class="slider-button">↔</div>
+                        <input type="range" min="0" max="100" value="50" class="compare-slider">
+                    </div>
+                    <p class="gallery-label">Exterior Correction</p>
+                </div>
+                <div class="compare-wrapper">
+                    <div class="compare-container">
+                        <img src="img/tesla-interior-after.webp" alt="After" class="img-after">
+                        <img src="img/tesla-interior-before.webp" alt="Before" class="img-before">
+                        <div class="slider-line"></div>
+                        <div class="slider-button">↔</div>
+                        <input type="range" min="0" max="100" value="50" class="compare-slider">
+                    </div>
+                    <p class="gallery-label">Interior Restoration</p>
+                </div>
+            </div>
+
+            <br>
+            <a href="#booking" class="scroll-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
         </div>
     </section>
 
@@ -75,29 +194,11 @@
             <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Book Appointment</h2>
             <form action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" required>
-                </div>
-                
-                <div class="form-group full-width">
-                    <label>Email Address</label>
-                    <input type="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Preferred Date</label>
-                    <input type="date" name="date" required onclick="this.showPicker()">
-                </div>
-
-                <div class="form-group">
-                    <label>Vehicle Type</label>
+                <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
+                <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" required></div>
+                <div class="form-group full-width"><label>Email Address</label><input type="email" name="email" required></div>
+                <div class="form-group"><label>Preferred Date</label><input type="date" name="date" required onclick="this.showPicker()"></div>
+                <div class="form-group"><label>Vehicle Type</label>
                     <select name="vehicle_type" required>
                         <option value="" disabled selected>Select Type...</option>
                         <option value="Car">Car</option>
@@ -106,62 +207,22 @@
                         <option value="Other">Other</option>
                     </select>
                 </div>
-
-                <div class="form-group">
-                    <label>Make</label>
-                    <input type="text" name="make" placeholder="e.g., Ford" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Model</label>
-                    <input type="text" name="model" placeholder="e.g., Mustang" required>
-                </div>
-
-                <div class="form-group full-width">
-                    <label>Notes</label>
-                    <textarea name="notes" rows="3" placeholder="Tell us what you need..."></textarea>
-                </div>
-
+                <div class="form-group"><label>Make</label><input type="text" name="make" placeholder="e.g., Ford" required></div>
+                <div class="form-group"><label>Model</label><input type="text" name="model" placeholder="e.g., Mustang" required></div>
+                <div class="form-group full-width"><label>Notes</label><textarea name="notes" rows="3" placeholder="Tell us what you need..."></textarea></div>
                 <button type="submit">Submit Request</button>
             </form>
         </div>
     </section>
 
-    <section id="works">
-        <div class="content-box works-box">
-            <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Our Works</h2>
-            
-            <div class="gallery-grid">
-                
-                <div class="compare-wrapper">
-                    <div class="compare-container">
-                        <img src="img/mazda-wheel-after.webp" alt="After" class="img-after">
-                        <img src="img/mazda-wheel-before.webp" alt="Before" class="img-before">
-                        
-                        <div class="slider-line"></div>
-                        <div class="slider-button">↔</div>
-                        
-                        <input type="range" min="0" max="100" value="50" class="compare-slider">
-                    </div>
-                    <p class="gallery-label">Exterior Correction</p>
-                </div>
-
-                <div class="compare-wrapper">
-                    <div class="compare-container">
-                        <img src="img/tesla-interior-after.webp" alt="After" class="img-after">
-                        <img src="img/tesla-interior-before.webp" alt="Before" class="img-before">
-                        
-                        <div class="slider-line"></div>
-                        <div class="slider-button">↔</div>
-                        
-                        <input type="range" min="0" max="100" value="50" class="compare-slider">
-                    </div>
-                    <p class="gallery-label">Interior Restoration</p>
-                </div>
-
+    <div id="service-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title" style="margin-bottom: 15px; color: #007BFF;">Service Details</h2>
+            <div id="modal-body" style="text-align: left; line-height: 1.6; color: #ccc;">
             </div>
         </div>
-    </section>
+    </div>
 
     <script src="script/script.js"></script>
 </body>

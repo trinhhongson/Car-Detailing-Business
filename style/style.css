@@ -11,14 +11,36 @@ html {
 }
 
 body {
-    background-color: #111;
+    /*background-color: #111;
     color: #fff;
     /* NEW BACKGROUND IMAGE */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1655628266959-12ec3f839a46?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1655628266959-12ec3f839a46?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');*/
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow-x: hidden;*/
+    
+    background-color: #111;
+    color: #fff;
     overflow-x: hidden;
+}
+
+/* --- NEW PARALLAX BACKGROUND --- */
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150vh; /* 20% taller than the screen */
+    
+    /* Make sure your background link is still correct here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/background.png');
+    
+    background-size: cover;
+    background-position: center top; 
+    z-index: -1; 
+    pointer-events: none; 
 }
 
 /* --- NAVBAR --- */
@@ -81,9 +103,11 @@ section.visible {
 
 /* --- HOME / HERO --- */
 #home h1 {
-    font-size: 4rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 5.5rem; /* Pumped this up to make the script stand out */
     margin-bottom: 10px;
     letter-spacing: 2px;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.8); /* Gives it a slight 3D pop */
 }
 
 #home p {
@@ -92,11 +116,36 @@ section.visible {
     margin-bottom: 10px;
 }
 
-.hero-buttons {
+/*.hero-buttons {
     margin-top: 40px;
     display: flex;
     justify-content: center;
     gap: 20px;
+}*/
+
+/* --- SCROLL INDICATOR ANIMATION --- */
+.scroll-indicator {
+    display: inline-block;
+    margin-top: 50px;
+    color: #fff;
+    animation: bounce 2s infinite;
+    transition: color 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    color: #007BFF;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
 }
 
 .btn {
@@ -330,4 +379,229 @@ button[type="submit"]:hover {
     /* Stack the before/after canvases on phones */
     .gallery-grid { flex-direction: column; }
     .compare-wrapper { width: 100%; }
+}
+
+/* --- MINIMALIST PROMO BANNER --- */
+.discount-banner {
+    background: transparent;
+    color: #007BFF;
+    border: 1px solid #007BFF;
+    padding: 8px 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    display: inline-block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+/* --- CLEAN CONTACT INFO --- */
+.contact-info {
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+/* --- REDESIGNED WHY US SECTION --- */
+.why-us-container {
+    margin-top: 50px;
+    text-align: left;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0.2); /* Subtle inner box */
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.why-title {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.why-us-list {
+    list-style: none;
+    padding: 0;
+}
+
+.why-us-list li {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Stacks text on mobile */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 12px;
+}
+
+.why-us-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.why-feature {
+    color: #007BFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.why-separator {
+    display: none; /* Hidden on mobile */
+}
+
+.why-benefit {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* --- DESKTOP LAYOUT FOR WHY US --- */
+@media (min-width: 600px) {
+    .why-us-list li {
+        display: grid;
+        grid-template-columns: 220px 20px 1fr; /* Fixed columns to perfectly align the pipes */
+        align-items: baseline;
+        gap: 15px;
+    }
+    
+    .why-feature {
+        text-align: right;
+        margin-bottom: 0;
+    }
+    
+    .why-separator {
+        display: block;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.2);
+        margin: 0;
+    }
+    
+    .why-benefit {
+        flex: 1;
+    }
+}
+
+.details-btn {
+    background: transparent;
+    color: #007BFF;
+    border: 1px solid #007BFF;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.details-btn:hover {
+    background: #007BFF;
+    color: #fff;
+}
+
+/* --- MODAL (POP-UP) STYLING --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background: #111;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #007BFF;
+}
+
+.modal-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-list li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 8px;
+}
+
+.modal-list strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 3px;
+}
+
+/* --- SERVICE CARD LAYOUT FIXES --- */
+.service-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.service-header h4 {
+    margin: 0; /* Kills any default margins pushing the button down */
+    font-size: 1.2rem;
+}
+
+.details-btn {
+    background: transparent;
+    color: #007BFF;
+    border: 1px solid #007BFF;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Forces the button text to stay on one line */
+    flex-shrink: 0; /* Prevents the button from getting squished if the title is long */
+    margin-left: 15px; /* Adds breathing room between the title and the button */
+}
+
+.details-btn:hover {
+    background: #007BFF;
+    color: #fff;
 }
