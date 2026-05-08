@@ -87,8 +87,8 @@ const serviceData = {
             <li><strong>Heavy Pet Hair Removal:</strong> +$45 and Up (upon inspection)</li>
             <li><strong>Dress Interior Plastic | UV Treatment:</strong> +$60</li>
             <li><strong>Leather Cleaning and Conditioning:</strong> +$75</li>
-            <li><strong>Seat Shampoo | Extraction:</strong> $120 Starting Price</li>
-            <li><strong>Shampoo Floor Carpets | Mats:</strong> $100 Starting Price</li>
+            <li><strong>Seat Shampoo | Extraction:</strong> +$120 Starting Price</li>
+            <li><strong>Shampoo Floor Carpets | Mats:</strong> +$100 Starting Price</li>
         </ul>
     `,
     exterior: `
