@@ -272,19 +272,18 @@ button[type="submit"]:hover {
     max-width: 1000px;
 }
 
+/* --- GALLERY GRID FIX FOR 3x2 --- */
 .gallery-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forces exactly 3 columns */
     gap: 30px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    width: 100%;
 }
 
+/* Ensure sliders inside the grid fill their column nicely */
 .compare-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .compare-container {
@@ -377,7 +376,11 @@ button[type="submit"]:hover {
     .hero-buttons .btn { width: 100%; }
 
     /* Stack the before/after canvases on phones */
-    .gallery-grid { flex-direction: column; }
+    /* Inside your @media block at the bottom of the file... */
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Drops it down to 1 column on phones */
+        gap: 40px; /* Gives a bit more breathing room between projects when stacked */
+    }
     .compare-wrapper { width: 100%; }
 }
 
@@ -409,7 +412,7 @@ button[type="submit"]:hover {
 .why-us-container {
     margin-top: 50px;
     text-align: left;
-    max-width: 650px;
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
     background: rgba(0, 0, 0, 0.2); /* Subtle inner box */

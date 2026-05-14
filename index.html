@@ -171,7 +171,9 @@
     <section id="works">
         <div class="content-box works-box">
             <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Our Works</h2>
+            
             <div class="gallery-grid">
+                
                 <div class="compare-wrapper">
                     <div class="compare-container">
                         <img src="img/mazda-wheel-after.webp" alt="After" class="img-after">
@@ -180,8 +182,9 @@
                         <div class="slider-button">↔</div>
                         <input type="range" min="0" max="100" value="50" class="compare-slider">
                     </div>
-                    <p class="gallery-label">Exterior Correction</p>
+                    <!--<p class="gallery-label">Exterior Correction</p>-->
                 </div>
+
                 <div class="compare-wrapper">
                     <div class="compare-container">
                         <img src="img/tesla-interior-after.webp" alt="After" class="img-after">
@@ -190,8 +193,53 @@
                         <div class="slider-button">↔</div>
                         <input type="range" min="0" max="100" value="50" class="compare-slider">
                     </div>
-                    <p class="gallery-label">Interior Restoration</p>
+                    <!--<p class="gallery-label">Interior Restoration</p>-->
                 </div>
+
+                <div class="compare-wrapper">
+                    <div class="compare-container">
+                        <img src="img/mustang-front-bumper-after.webp" alt="After" class="img-after">
+                        <img src="img/mustang-front-bumper-before.webp" alt="Before" class="img-before">
+                        <div class="slider-line"></div>
+                        <div class="slider-button">↔</div>
+                        <input type="range" min="0" max="100" value="50" class="compare-slider">
+                    </div>
+                    <!--<p class="gallery-label">Ceramic Coating</p>-->
+                </div>
+
+                <div class="compare-wrapper">
+                    <div class="compare-container">
+                        <img src="img/mazda3-rear-interior-after.webp" alt="After" class="img-after">
+                        <img src="img/mazda3-rear-interior-before.webp" alt="Before" class="img-before">
+                        <div class="slider-line"></div>
+                        <div class="slider-button">↔</div>
+                        <input type="range" min="0" max="100" value="50" class="compare-slider">
+                    </div>
+                    <!--<p class="gallery-label">Headlight Restoration</p>-->
+                </div>
+
+                <div class="compare-wrapper">
+                    <div class="compare-container">
+                        <img src="img/tesla-rear-bumper-after.webp" alt="After" class="img-after">
+                        <img src="img/tesla-rear-bumper-before.webp" alt="Before" class="img-before">
+                        <div class="slider-line"></div>
+                        <div class="slider-button">↔</div>
+                        <input type="range" min="0" max="100" value="50" class="compare-slider">
+                    </div>
+                    <!--<p class="gallery-label">Engine Bay Detailing</p>-->
+                </div>
+
+                <div class="compare-wrapper">
+                    <div class="compare-container">
+                        <img src="img/tesla-exterior-after.webp" alt="After" class="img-after">
+                        <img src="img/tesla-exterior-before.webp" alt="Before" class="img-before">
+                        <div class="slider-line"></div>
+                        <div class="slider-button">↔</div>
+                        <input type="range" min="0" max="100" value="50" class="compare-slider">
+                    </div>
+                    <!--<p class="gallery-label">Paint Correction</p>-->
+                </div>
+
             </div>
 
             <br>
@@ -203,7 +251,7 @@
         </div>
     </section>
 
-    <section id="booking">
+    <!--<section id="booking">
         <div class="content-box">
             <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Book Appointment</h2>
             <form action="https://api.web3forms.com/submit" method="POST">
@@ -227,7 +275,32 @@
                 <button type="submit">Submit Request</button>
             </form>
         </div>
+    </section>-->
+
+    <!--Calendly Inline Embed Booking-->
+    <section id="booking">
+        <div class="content-box">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Book Appointment</h2>
+            
+            <div class="calendly-inline-widget" data-url="https://calendly.com/trinhhongson1202/shined-and-polished" style="min-width:320px;height:1000px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
     </section>
+
+    <!--Calendly Popup Widget Booking-->
+    <!--<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">
+        window.onload = function() { 
+            Calendly.initBadgeWidget({ 
+                url: 'https://calendly.com/trinhhongson1202/shined-and-polished', 
+                text: 'Book Appointment', 
+                color: '#007BFF', /* Matches your site's blue accent */
+                textColor: '#ffffff', 
+                branding: false /* Hides the Calendly logo on the button */
+            }); 
+        }
+    </script>-->
 
     <div id="service-modal" class="modal-overlay">
         <div class="modal-content">
