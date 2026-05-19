@@ -364,7 +364,7 @@ button[type="submit"]:hover {
     margin-bottom: 30px;
     color: #aaaaaa; /* Classy faded gray */
     text-decoration: none; /* Kills the ugly underline */
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s ease;
@@ -372,6 +372,48 @@ button[type="submit"]:hover {
 
 .social-redirect:hover {
     color: #007BFF; /* Lights up blue when they mouse over it */
+}
+
+/* --- PURE TEXT SHIMMER EFFECT (NO BOX/BUTTON) --- */
+.promo-cta {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    
+    /* Creates the gradient: Slightly faded white with a blinding white stripe in the middle */
+    background: linear-gradient(
+        120deg, 
+        rgba(255, 255, 255, 0.6) 0%, 
+        rgba(255, 255, 255, 0.6) 40%, 
+        rgba(255, 255, 255, 1) 50%, 
+        rgba(255, 255, 255, 0.6) 60%, 
+        rgba(255, 255, 255, 0.6) 100%
+    );
+    background-size: 200% auto;
+    
+    /* MAGIC TRICK: This forces the background color into the shape of the letters */
+    color: #fff; /* Fallback for older browsers */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Runs the shimmer across the letters continuously */
+    animation: textShimmer 3s linear infinite;
+    transition: transform 0.3s ease;
+}
+
+/* Pops up slightly when hovered */
+.promo-cta:hover {
+    transform: scale(1.05);
+}
+
+/* The actual animation moving the light from left to right */
+@keyframes textShimmer {
+    to {
+        background-position: 200% center;
+    }
 }
 
 /* --- MOBILE RESPONSIVENESS ADJUSTMENTS --- */
