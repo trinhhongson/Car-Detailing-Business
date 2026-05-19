@@ -84,7 +84,7 @@ const serviceData = {
         <p style="margin-bottom: 15px; color: #fff;"><strong>Base Package:</strong> Interior Detail from Deluxe Package</p>
         <h4 style="color: #007BFF; margin-bottom: 10px;">Available Add-ons:</h4>
         <ul class="modal-list">
-            <li><strong>Heavy Pet Hair Removal:</strong> +$45 and Up (upon inspection)</li>
+            <li><strong>Heavy Pet Hair Removal:</strong> +$45 Starting Price (extra inspection will be needed)</li>
             <li><strong>Dress Interior Plastic | UV Treatment:</strong> +$60</li>
             <li><strong>Leather Cleaning and Conditioning:</strong> +$75</li>
             <li><strong>Seat Shampoo | Extraction:</strong> +$120 Starting Price</li>
@@ -95,8 +95,8 @@ const serviceData = {
         <p style="margin-bottom: 15px; color: #fff;"><strong>Base Package:</strong> Exterior Detail Wash and Wax</p>
         <h4 style="color: #007BFF; margin-bottom: 10px;">Available Add-ons:</h4>
         <ul class="modal-list">
-            <li><strong>Iron Removal:</strong> +$45 and Up</li>
-            <li><strong>Claybar Treatment:</strong> +$60 and Up</li>
+            <li><strong>Iron Removal:</strong> +$45 Starting Price</li>
+            <li><strong>Claybar Treatment:</strong> +$60 Starting Price</li>
             <li><strong>Headlight Restoration:</strong> +$80</li>
             <li><strong>Paint Polish:</strong> +$150</li>
         </ul>
